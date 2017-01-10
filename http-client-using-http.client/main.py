@@ -1,35 +1,28 @@
 #!/usr/bin/env python3
 
 import json
+import socket
+import http.client
 
-from urllib.error import HTTPError
-from urllib.request import Request, urlopen
-from urllib.parse import urlencode
-
-req = Request("https://httpbin.org/get?%s" % urlencode({'show_env': '1'}))
-
-print("---url-----------------------------")
-print(req.get_full_url())
-
-print("---HTTP METHOD---------------------")
-print(req.get_method())
+conn = http.client.HTTPSConnection('httpbin.org')
 
 try:
-    rsp = urlopen(req)
-except HTTPError as e:
+    conn.request('GET', '/get?show_env=1')
+except socket.gaierror as e:
     print(e)
     exit(1)
 
-httpMsg = rsp.info()
-rspContent = rsp.read()
+httpRsp = conn.getresponse()
+rspContent = httpRsp.read()
+httpMsg = httpRsp.msg
 
-print("---url-----------------------------")
-print(rsp.url)
+conn.close()
 
 print("---status code---------------------")
-print(rsp.getcode())
+print(httpRsp.status)
 
 print("---response header-----------------")
+print(httpRsp.getheaders())
 print(httpMsg.items())
 
 print("---binary response content---------")

@@ -2,7 +2,7 @@
 
 import requests
 
-r = requests.get('http://httpbin.org/get', params={'show_env': '1'})
+r = requests.get('https://httpbin.org/get', params={'show_env': '1'})
 
 print("---url-----------------------------")
 print(r.url)
