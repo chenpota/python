@@ -22,7 +22,6 @@ class MyHttpHandler(BaseHTTPRequestHandler):
 
         self.wfile.write(bytes(msg, "utf-8"))
 
-
 httpd = HTTPServer(('127.0.0.1', 8000), MyHttpHandler)
 
 httpd.serve_forever()
