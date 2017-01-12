@@ -4,8 +4,6 @@ import json
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-import urllib.parse
-
 
 class MyHttpHandler(BaseHTTPRequestHandler):
 
