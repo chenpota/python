@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 
+import http.client
 import json
 import socket
-import http.client
+import ssl
 
-conn = http.client.HTTPSConnection('httpbin.org')
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_REQUIRED
+
+conn = http.client.HTTPSConnection('httpbin.org', 443, context=ctx)
 
 try:
     conn.request('GET', '/get?show_env=1')
