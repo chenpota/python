@@ -19,7 +19,7 @@ print("---HTTP METHOD---------------------")
 print(req.get_method())
 
 ctx = ssl.create_default_context()
-ctx.check_hostname = False
+ctx.check_hostname = True
 ctx.verify_mode = ssl.CERT_REQUIRED
 
 try:

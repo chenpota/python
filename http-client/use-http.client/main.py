@@ -6,7 +6,7 @@ import socket
 import ssl
 
 ctx = ssl.create_default_context()
-ctx.check_hostname = False
+ctx.check_hostname = True
 ctx.verify_mode = ssl.CERT_REQUIRED
 
 conn = http.client.HTTPSConnection('httpbin.org', 443, context=ctx)
