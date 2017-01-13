@@ -7,7 +7,7 @@ from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
 
-req = Request("https://httpbin.org/get?%s" % urlencode({'show_env': '1'}))
+req = Request("https://httpbin.org:443/get?%s" % urlencode({'show_env': '1'}))
 
 print("---url-----------------------------")
 print(req.get_full_url())
