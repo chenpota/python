@@ -2,9 +2,15 @@
 
 import requests
 
-r = requests.get('https://httpbin.org:%s/get' % '443',
-                 params={'show_env': '1'},
-                 verify=True)
+from requests.exceptions import ConnectionError
+
+try:
+    r = requests.get('https://httpbin.org:%s/get' % '443',
+                     params={'show_env': '1'},
+                     verify=True)
+except ConnectionError as e:
+    print(e)
+    exit(1)
 
 print("---url-----------------------------")
 print(r.url)
