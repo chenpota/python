@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import ssl
 
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
@@ -14,8 +15,12 @@ print(req.get_full_url())
 print("---HTTP METHOD---------------------")
 print(req.get_method())
 
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_REQUIRED
+
 try:
-    rsp = urlopen(req)
+    rsp = urlopen(req, context=ctx)
 except HTTPError as e:
     print(e)
     exit(1)
