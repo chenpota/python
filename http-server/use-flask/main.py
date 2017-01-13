@@ -24,5 +24,6 @@ if __name__ == '__main__':
         host='127.0.0.1',
         port=8000,
         threaded=True,
-        debug=True
+        debug=True,
+        ssl_context=('server.pem', 'server.key')
     )
