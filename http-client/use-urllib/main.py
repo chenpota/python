@@ -19,8 +19,9 @@ print("---HTTP METHOD---------------------")
 print(req.get_method())
 
 ctx = ssl.create_default_context()
-ctx.check_hostname = True
+ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_REQUIRED
+# ctx.load_verify_locations('mycert.crt')
 
 try:
     rsp = urlopen(req, context=ctx)

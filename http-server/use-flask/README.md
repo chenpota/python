@@ -6,8 +6,6 @@ pip3 install flask
 
 openssl req -new -x509 -keyout server.key -out server.pem -days 365 -nodes
 
-*Common Name (e.g. server FQDN or YOUR name) []:127.0.0.1*
-
 openssl x509 -outform pem -in server.pem -out mycert.crt
 
 # curl
