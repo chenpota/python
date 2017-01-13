@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import ssl
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
@@ -23,5 +24,11 @@ class MyHttpHandler(BaseHTTPRequestHandler):
         self.wfile.write(bytes(msg, "utf-8"))
 
 httpd = HTTPServer(('127.0.0.1', 8000), MyHttpHandler)
+
+httpd.socket = ssl.wrap_socket(
+    httpd.socket,
+    certfile='./server.pem',
+    server_side=True
+)
 
 httpd.serve_forever()
