@@ -2,7 +2,7 @@
 
 import requests
 
-r = requests.get('https://httpbin.org/get',
+r = requests.get('https://httpbin.org:%s/get' % '443',
                  params={'show_env': '1'},
                  verify=True)
 
