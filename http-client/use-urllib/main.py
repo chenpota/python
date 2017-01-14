@@ -2,35 +2,32 @@
 
 import json
 import ssl
+import urllib
 
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
-from urllib.parse import urlencode
 
-req = Request(
-    "https://httpbin.org:%s/get?%s" %
-    ('443', urlencode({'show_env': '1'}))
+
+req = urllib.request.Request(
+    "http://httpbin.org:80/get?%s" % urllib.parse.urlencode({'show_env': '1'})
 )
 
 print("---url-----------------------------")
-print(req.get_full_url())
+print(req.full_url)
 
 print("---HTTP METHOD---------------------")
 print(req.get_method())
 
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_REQUIRED
-# ctx.load_verify_locations('mycert.crt')
-
 try:
-    rsp = urlopen(req, context=ctx)
-except HTTPError as e:
+    rsp = urllib.request.urlopen(req)
+except urllib.error.HTTPError as e:
     print(e)
     exit(1)
 
-httpMsg = rsp.info()
+rspHeader = rsp.info()
 rspContent = rsp.read()
+
+rsp.close()
 
 print("---url-----------------------------")
 print(rsp.url)
@@ -39,13 +36,13 @@ print("---status code---------------------")
 print(rsp.getcode())
 
 print("---response header-----------------")
-print(httpMsg.items())
+print(rspHeader.items())
+
+print("---response content encoding-------")
+print(rspHeader.get_content_charset())
 
 print("---binary response content---------")
 print(rspContent)
-
-print("---response content encoding-------")
-print(httpMsg.get_content_charset())
 
 print("---response content----------------")
 print(rspContent.decode('utf-8'))
