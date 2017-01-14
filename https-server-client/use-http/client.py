@@ -5,7 +5,7 @@ import json
 import socket
 import ssl
 
-ctx = ssl.create_default_context(cafile='mycert.crt')
+ctx = ssl.create_default_context(cafile='server.pem')
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_REQUIRED
 

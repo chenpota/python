@@ -9,7 +9,7 @@ import urllib.request
 
 req = urllib.request.Request("https://127.0.0.1:8000/")
 
-ctx = ssl.create_default_context(cafile='mycert.crt')
+ctx = ssl.create_default_context(cafile='server.pem')
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_REQUIRED
 

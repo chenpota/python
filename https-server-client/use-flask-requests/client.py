@@ -8,7 +8,7 @@ requests.packages.urllib3.disable_warnings(
 )
 
 try:
-    rsp = requests.get(url='https://127.0.0.1:8000', verify='mycert.crt')
+    rsp = requests.get(url='https://127.0.0.1:8000', verify='server.pem')
 except requests.exceptions.ConnectionError as e:
     print(e)
     exit(1)
