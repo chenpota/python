@@ -13,4 +13,10 @@ curl -i --cacert mycert.crt https://127.0.0.1:8000
 
 # Reference
 
-[1] https://docs.python.org/3.5/library/http.server.html
+[1] http://flask.pocoo.org/docs/0.12/
+
+[2] https://docs.python.org/3.5/library/urllib.html
+
+[3] https://docs.python.org/3.5/library/email.message.html#email.message.Message
+
+[4] https://docs.python.org/3.5/library/json.html
