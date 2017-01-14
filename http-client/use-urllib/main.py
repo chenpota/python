@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 
 import json
-import ssl
-import urllib
-
-from urllib.error import HTTPError
-from urllib.request import Request, urlopen
+import urllib.error
+import urllib.parse
+import urllib.request
 
 
 req = urllib.request.Request(
