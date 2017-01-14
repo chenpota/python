@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 
-from flask import Flask, jsonify, make_response, request
+import flask
 
-app = Flask(__name__)
+
+app = flask.Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
-def my_get_handler():
-    print("PATH: " + request.query_string.decode("utf-8"))
+def my_root_handler():
+    print("PATH: " + flask.request.query_string.decode("utf-8"))
 
-    return make_response(
-        jsonify(
-            {
-                'id': 'XXX-XXXX',
-                'content': 'TBD'
-            }
+    return flask.make_response(
+        flask.jsonify(
+            {'id': 'xxx-xxxx', 'content': 'TBD'}
         ),
         200
     )
@@ -22,8 +20,5 @@ def my_get_handler():
 if __name__ == '__main__':
     app.run(
         host='127.0.0.1',
-        port=8000,
-        threaded=True,
-        debug=True,
-        ssl_context=('server.pem', 'server.key')
+        port=8000
     )
