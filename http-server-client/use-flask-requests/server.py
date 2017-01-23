@@ -58,6 +58,8 @@ def create_player():
 def delete_player(pid):
     index = 0
 
+    global players
+
     for player in players:
         if player['pid'] == pid:
             del players[index]
