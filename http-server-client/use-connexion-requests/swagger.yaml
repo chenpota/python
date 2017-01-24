@@ -1,0 +1,77 @@
+swagger: '2.0'
+
+info:
+  title: Player API
+  version: '1.0.0'
+
+produces:
+  - application/json
+
+paths:
+  /players:
+    get:
+      operationId: api.get_players
+      responses:
+        200:
+          description: Query players
+          schema:
+            type: string
+    post:
+      operationId: api.create_player
+      responses:
+        200:
+          description: Return new player
+          schema:
+            type: string
+  /players/{pid}:
+    get:
+      operationId: api.get_player
+      parameters:
+        - $ref: '#/parameters/player_id'
+      responses:
+        200:
+          description: Query specific player
+          schema:
+            type: string
+        404:
+          description: Specific player is not found
+    delete:
+      operationId: api.delete_player
+      parameters:
+        - $ref: '#/parameters/player_id'
+      responses:
+        200:
+          description: Remove specific player
+          schema:
+            type: string
+        404:
+          description: Specific player is not found
+    put:
+      operationId: api.replace_player
+      parameters:
+        - $ref: '#/parameters/player_id'
+      responses:
+        200:
+          description: Replace specific player
+          schema:
+            type: string
+        404:
+          description: Specific player is not found
+    patch:
+      operationId: api.update_player
+      parameters:
+        - $ref: '#/parameters/player_id'
+      responses:
+        200:
+          description: Update specific player
+          schema:
+            type: string
+        404:
+          description: Specific player is not found
+
+parameters:
+  player_id:
+    name: pid
+    in: path
+    type: integer
+    required: true
