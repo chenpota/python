@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from connexion import request
+from connexion import abort, request
 
 players = [
     {
@@ -23,7 +23,7 @@ def get_player(pid):
         if player['pid'] == pid:
             return {'player': player}, 200
 
-    return {}, 404
+    abort(404)
 
 
 def create_player():
@@ -54,7 +54,7 @@ def delete_player(pid):
 
         index += 1
 
-    return {'result': False}, 404
+    abort(404)
 
 
 def replace_player(pid):
@@ -66,7 +66,7 @@ def replace_player(pid):
             player['score'] = request.json.get('score')
             return {'player': player}, 200
 
-    return {'result': False}, 404
+    abort(404)
 
 
 def update_player(pid):
