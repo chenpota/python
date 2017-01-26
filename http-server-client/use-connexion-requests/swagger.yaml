@@ -15,18 +15,16 @@ paths:
         200:
           description: Query players
           schema:
-            type: object
+            type: array
             items:
-              $ref: '#/definitions/Players'
+              $ref: '#/definitions/Player'
     post:
       operationId: api.create_player
       responses:
         200:
           description: Return new player
           schema:
-            type: object
-            items:
-              $ref: '#/definitions/Player'
+            $ref: '#/definitions/Player'
   /players/{pid}:
     get:
       operationId: api.get_player
@@ -36,9 +34,7 @@ paths:
         200:
           description: Query specific player
           schema:
-            type: object
-            items:
-              $ref: '#/definitions/Player'
+            $ref: '#/definitions/Player'
         404:
           description: Specific player is not found
     delete:
@@ -46,12 +42,8 @@ paths:
       parameters:
         - $ref: '#/parameters/player_id'
       responses:
-        200:
+        204:
           description: Remove specific player
-          schema:
-            type: object
-            items:
-              $ref: '#/definitions/Player'
         404:
           description: Specific player is not found
     put:
@@ -62,9 +54,7 @@ paths:
         200:
           description: Replace specific player
           schema:
-            type: object
-            items:
-              $ref: '#/definitions/Player'
+            $ref: '#/definitions/Player'
         404:
           description: Specific player is not found
     patch:
@@ -75,29 +65,18 @@ paths:
         200:
           description: Update specific player
           schema:
-            type: object
-            items:
-              $ref: '#/definitions/Player'
+            $ref: '#/definitions/Player'
         404:
           description: Specific player is not found
 
 parameters:
   player_id:
     name: pid
-    in: path
     type: integer
+    in: path
     required: true
 
 definitions:
-  Players:
-    type: object
-    required:
-      - players
-    properties:
-      players:
-        type: array
-        items:
-          $ref: '#/definitions/Player'
   Player:
     type: object
     required:

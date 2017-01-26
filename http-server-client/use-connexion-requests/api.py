@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from connexion import abort, request
+from connexion import NoContent, abort, request
 
 players = [
     {
@@ -12,8 +12,10 @@ players = [
 player_id = 1
 
 PETS = {}
+
+
 def get_players():
-    return {'players': players}, 200
+    return players, 200
 
 
 def get_player(pid):
@@ -21,7 +23,7 @@ def get_player(pid):
 
     for player in players:
         if player['pid'] == pid:
-            return {'player': player}, 200
+            return player, 200
 
     abort(404)
 
@@ -39,7 +41,7 @@ def create_player():
 
     player_id += 1
 
-    return {'player': player}, 201
+    return player, 201
 
 
 def delete_player(pid):
@@ -50,7 +52,7 @@ def delete_player(pid):
     for player in players:
         if player['pid'] == pid:
             del players[index]
-            return {'result': True}, 200
+            return NoContent, 204
 
         index += 1
 
@@ -64,7 +66,7 @@ def replace_player(pid):
         if player['pid'] == pid:
             player['name'] = request.json.get('name')
             player['score'] = request.json.get('score')
-            return {'player': player}, 200
+            return player, 200
 
     abort(404)
 
@@ -76,6 +78,6 @@ def update_player(pid):
         if player['pid'] == pid:
             player['name'] = request.json.get('name', player['name'])
             player['score'] = request.json.get('score', player['score'])
-            return {'player': player}, 200
+            return player, 200
 
-    return {'result': False}, 404
+    abort(404)

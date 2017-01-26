@@ -18,7 +18,7 @@ player_id = 1
 @app.route('/players', methods=['GET'])
 def get_players():
     global players
-    return jsonify({'players': players}), 200
+    return jsonify(players), 200
 
 
 @app.route('/players/<int:pid>', methods=['GET'])
@@ -27,7 +27,7 @@ def get_player(pid):
 
     for player in players:
         if player['pid'] == pid:
-            return jsonify({'player': player}), 200
+            return jsonify(player), 200
 
     abort(404)
 
@@ -51,7 +51,7 @@ def create_player():
 
     player_id += 1
 
-    return jsonify({'player': player}), 201
+    return jsonify(player), 201
 
 
 @app.route('/players/<int:pid>', methods=['DELETE'])
@@ -63,7 +63,7 @@ def delete_player(pid):
     for player in players:
         if player['pid'] == pid:
             del players[index]
-            return jsonify({'result': True}), 200
+            return '', 204
 
         index += 1
 
@@ -83,7 +83,7 @@ def replace_player(pid):
         if player['pid'] == pid:
             player['name'] = request.json.get('name')
             player['score'] = request.json.get('score')
-            return jsonify({'player': player}), 200
+            return jsonify(player), 200
 
     abort(404)
 
@@ -100,7 +100,7 @@ def update_player(pid):
         if player['pid'] == pid:
             player['name'] = request.json.get('name', player['name'])
             player['score'] = request.json.get('score', player['score'])
-            return jsonify({'player': player}), 200
+            return jsonify(player), 200
 
     abort(404)
 
