@@ -15,14 +15,18 @@ paths:
         200:
           description: Query players
           schema:
-            type: string
+            type: object
+            items:
+              $ref: '#/definitions/Players'
     post:
       operationId: api.create_player
       responses:
         200:
           description: Return new player
           schema:
-            type: string
+            type: object
+            items:
+              $ref: '#/definitions/Player'
   /players/{pid}:
     get:
       operationId: api.get_player
@@ -32,7 +36,9 @@ paths:
         200:
           description: Query specific player
           schema:
-            type: string
+            type: object
+            items:
+              $ref: '#/definitions/Player'
         404:
           description: Specific player is not found
     delete:
@@ -43,7 +49,9 @@ paths:
         200:
           description: Remove specific player
           schema:
-            type: string
+            type: object
+            items:
+              $ref: '#/definitions/Player'
         404:
           description: Specific player is not found
     put:
@@ -54,7 +62,9 @@ paths:
         200:
           description: Replace specific player
           schema:
-            type: string
+            type: object
+            items:
+              $ref: '#/definitions/Player'
         404:
           description: Specific player is not found
     patch:
@@ -65,7 +75,9 @@ paths:
         200:
           description: Update specific player
           schema:
-            type: string
+            type: object
+            items:
+              $ref: '#/definitions/Player'
         404:
           description: Specific player is not found
 
@@ -75,3 +87,29 @@ parameters:
     in: path
     type: integer
     required: true
+
+definitions:
+  Players:
+    type: object
+    required:
+      - players
+    properties:
+      players:
+        type: array
+        items:
+          $ref: '#/definitions/Player'
+  Player:
+    type: object
+    required:
+      - pid
+      - name
+      - score
+    properties:
+      pid:
+        type: integer
+        minimum: 0
+      name:
+        type: string
+      score:
+        type: integer
+        minimum: 0

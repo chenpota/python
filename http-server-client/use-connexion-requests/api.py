@@ -11,9 +11,9 @@ players = [
 ]
 player_id = 1
 
-
+PETS = {}
 def get_players():
-    return players, 200
+    return {'players': players}, 200
 
 
 def get_player(pid):
