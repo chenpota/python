@@ -21,7 +21,7 @@ paths:
     post:
       operationId: api.create_player
       responses:
-        200:
+        201:
           description: Return new player
           schema:
             $ref: '#/definitions/Player'
