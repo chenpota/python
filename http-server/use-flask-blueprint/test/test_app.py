@@ -1,6 +1,5 @@
 import unittest
 from flask import current_app
-from flask import url_for
 from app import create_server
 
 
@@ -16,12 +15,12 @@ class TestApp(unittest.TestCase):
         self.app_ctx.pop()
 
     def test_teacher(self):
-        rsp = self.client.get('teacher')
+        rsp = self.client.get('/teacher')
         self.assertEqual(rsp.get_data(as_text=True), 'teacher')
         self.assertEqual(rsp.status_code, 200)
 
     def test_student(self):
-        rsp = self.client.get('student')
+        rsp = self.client.get('/student')
         self.assertEqual(rsp.get_data(as_text=True), 'student')
         self.assertEqual(rsp.status_code, 200)
 
