@@ -47,18 +47,6 @@ def create_db(file):
 
         db.commit()
 
-'''
-def insert_db(file):
-    students = [('王小明',), ('葉大雄',)]
-
-    with sqlite3.connect(file) as db:
-        cur = db.cursor()
-
-        cur.executemany("INSERT INTO students('name') VALUES (?)", students)
-
-        db.commit()
-'''
-
 
 def insert_student(db, student):
     cur = db.cursor()
