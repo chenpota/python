@@ -47,8 +47,6 @@ def create_db(file):
             CREATE UNIQUE INDEX index_students_id_class ON scores(student_id, class);
         ''')
 
-        db.commit()
-
 
 def insert_student(db, student):
     cur = db.cursor()
@@ -77,8 +75,6 @@ def insert(file, infos):
     with sqlite3.connect(file) as db:
         student_id = insert_student(db, infos[0])
         insert_scores(db, student_id, infos[1])
-
-        db.commit()
 
 
 def query_all(file):
@@ -161,7 +157,7 @@ def main():
     # Create DB and check it
     print("Create DB and check it:")
     create_db(file)
-    is_sqlite3_file(file)
+    print('\t', is_sqlite3_file(file) == True)
 
     # Insert two students
     print('Insert two students:')
