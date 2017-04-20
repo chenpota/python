@@ -158,6 +158,8 @@ def query_student_with_index_size(file, student, next_record_index=0, record_siz
 def main():
     file = './db'
 
+    # Create DB and check it
+    print("Create DB and check it:")
     create_db(file)
     is_sqlite3_file(file)
 
