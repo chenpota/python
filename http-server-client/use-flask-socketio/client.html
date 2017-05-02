@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket = io.connect('http://127.0.0.1:12345/my_namespace');
+
+            socket.on('connect', function() {
+                document.writeln('connect')
+            });
+
+            socket.on('disconnect', function() {
+                document.writeln('disconnect')
+            });
+
+            socket.on('msg_from_server', function(msg) {
+                document.writeln(msg)
+                socket.emit('msg_from_client', 'Hello, server!');
+            });
+        </script>
+    </body>
+</html>

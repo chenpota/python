@@ -2,6 +2,7 @@
 
 from flask import Flask
 from flask_socketio import SocketIO
+from flask_socketio import disconnect
 from flask_socketio import emit
 
 app = Flask(__name__)
@@ -18,6 +19,7 @@ def do_connect():
 @socketio.on('msg_from_client', namespace='/my_namespace')
 def do_msg_from_client(msg):
     print('do_msg_from_client:', msg)
+    disconnect()
 
 
 @socketio.on('disconnect', namespace='/my_namespace')
