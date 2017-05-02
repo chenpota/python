@@ -1,7 +1,6 @@
 # Dependency packages
 
-pip3 install flask
-pip3 install flask-socketio
+	$ pip3 install flask, flask-socketio, eventlet, socketIO-client
 
 # Reference
 
