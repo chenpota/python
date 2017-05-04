@@ -6,6 +6,8 @@ pip3 install flask flask-httpauth Werkzeug
 
 	$ curl -u username:password http://localhost:5000
 
+Stuck when chrome browser and then curl
+
 # curl digest-auth
 
 	$ curl --digest -u username:password http://localhost:5000
