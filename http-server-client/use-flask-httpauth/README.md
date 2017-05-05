@@ -1,17 +1,26 @@
 # Dependency packages
 
+	$ apt-get install httpie curl wget
+
 	$ pip3 install flask flask-httpauth Werkzeug requests
 
 # curl basic-auth
 
 	$ curl -u username:password http://localhost:5000
 
+	$ http --auth-type basic -a username:password http://localhost:5000
 
 # curl digest-auth
 
+	$ wget http://localhost:5000 --http-user=username --http-password=password
+
+	$ http --auth-type digest -a username:password http://localhost:5000
+
 	$ curl --digest -u username:password http://localhost:5000
 
-Fail
+curl is failed.
+
+	$ 
 
 # Reference
 
