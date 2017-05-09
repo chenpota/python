@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename
 
 
 APP = Flask(__name__)
+APP.config['MAX_CONTENT_LENGTH'] = 1024
 
 
 @APP.route('/upload', methods=['GET', 'POST'])
