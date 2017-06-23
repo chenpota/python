@@ -16,13 +16,17 @@ It could add/remove Handler or Filter.
 
 [logging flow](https://docs.python.org/3.5/_images/logging_flow.png)
 
-[logging Formatter](https://docs.python.org/3.5/library/logging.html#logrecord-attributes)
-
 [logging.config](https://docs.python.org/3.5/library/logging.config.html)
 
 # Handlers
 
 [Useful handlers](https://docs.python.org/3.5/howto/logging.html#useful-handlers)
+
+# Filters
+
+# Formatters
+
+[logging Formatter](https://docs.python.org/3.5/library/logging.html#logrecord-attributes)
 
 # Reference
 
