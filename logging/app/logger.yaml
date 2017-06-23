@@ -1,0 +1,32 @@
+version: 1
+
+disable_existing_loggers: False
+
+formatters:
+  stderr:
+    format: "%(asctime)s - %(thread)d - %(name)s - %(levelname)s: %(message)s"
+  syslog:
+    format: "%(thread)d - %(name)s - %(levelname)s: %(message)s"
+
+handlers:
+  stderr:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: stderr
+  syslog:
+    class: logging.handlers.SysLogHandler
+    level: DEBUG
+    formatter: syslog
+    address: !!python/tuple ['localhost', 514]
+    #address: /dev/log
+
+loggers:
+  #external_module:
+  #  level: DEBUG
+  #  handlers: [stderr, syslog]
+  app.main:
+    level: DEBUG
+    handlers: [stderr, syslog]
+  app.library:
+    level: DEBUG
+    handlers: [stderr, syslog]
