@@ -7,8 +7,6 @@ from dict_config import logger
 from dict_config.module import library
 
 
-logging.config.dictConfig(logger.CONFIG)
-
 LOGGER = logging.getLogger('dict_config.app')
 
 
@@ -21,4 +19,6 @@ def main():
 
 
 if __name__ == '__main__':
+    logging.config.dictConfig(logger.CONFIG)
+
     main()
