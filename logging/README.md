@@ -43,3 +43,5 @@ It could add/remove Handler or Filter.
 1. https://docs.python.org/3.5/howto/logging.html
 
 2. https://docs.python.org/3.5/howto/logging-cookbook.html
+
+3. https://docs.python.org/3.5/library/logging.html
