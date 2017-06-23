@@ -1,5 +1,11 @@
 # logging library
 
+[PEP 282](https://www.python.org/dev/peps/pep-0282/)
+
+[PEP 337](https://www.python.org/dev/peps/pep-0337/)
+
+[PEP 391](https://www.python.org/dev/peps/pep-0391/)
+
 * Loggers
 * Handlers
 * Filters
