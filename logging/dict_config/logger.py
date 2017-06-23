@@ -10,7 +10,8 @@ CONFIG = {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'default'
+            'formatter': 'default',
+            'stream': 'ext://sys.stdout'
         }
     },
     'loggers': {
