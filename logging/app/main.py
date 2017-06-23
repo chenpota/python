@@ -28,7 +28,6 @@ def main():
 
 
 if __name__ == '__main__':
-
     # logging.config.dictConfig(logger.CONFIG)
     logging.config.dictConfig(load_logger_yaml())
 
