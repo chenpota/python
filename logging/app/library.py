@@ -3,12 +3,11 @@ import logging
 from external_module.library import external_library
 
 
-LOGGER = logging.getLogger(__name__)
-
-
 def do_something():
-    LOGGER.debug('enter do_something()')
+    logger = logging.getLogger(__name__)
+
+    logger.debug('enter do_something()')
 
     external_library()
 
-    LOGGER.debug('exit do_something()')
+    logger.debug('exit do_something()')

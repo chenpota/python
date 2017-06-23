@@ -24,11 +24,11 @@ CONFIG = {
         }
     },
     'loggers': {
-        #'external_module': {
-        #    'level': 'DEBUG',
-        #    'handlers': ['stderr', 'syslog']
-        #},
-        '__main__': {
+        'external_module': {
+            'level': 'DEBUG',
+            'handlers': ['stderr', 'syslog']
+        },
+        'app.main': {
             'level': 'DEBUG',
             'handlers': ['stderr', 'syslog']
         },

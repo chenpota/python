@@ -7,10 +7,9 @@ from app import library
 from app import logger
 
 
-LOGGER = logging.getLogger(__name__)
-
-
 def main():
+    LOGGER = logging.getLogger('app.main')
+
     LOGGER.debug('enter main()')
 
     library.do_something()

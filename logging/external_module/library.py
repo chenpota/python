@@ -1,9 +1,11 @@
 import logging
 
-from external_module import LOGGER
+from external_module import LOGGER_NAME
 
 
 def external_library():
-    LOGGER.debug('enter external_library()')
+    logger = logging.getLogger(LOGGER_NAME)
 
-    LOGGER.debug('exit external_library()')
+    logger.debug('enter external_library()')
+
+    logger.debug('exit external_library()')
