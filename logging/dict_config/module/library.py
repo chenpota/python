@@ -1,7 +1,7 @@
 import logging
 
 
-LOGGER = logging.getLogger(__name__)
+LOGGER = logging.getLogger('dict_config.module.library')
 
 
 def do_something():

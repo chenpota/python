@@ -9,7 +9,7 @@ from dict_config.module import library
 
 logging.config.dictConfig(logger.CONFIG)
 
-LOGGER = logging.getLogger(__name__)
+LOGGER = logging.getLogger('dict_config.app')
 
 
 def main():

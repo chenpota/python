@@ -15,7 +15,7 @@ CONFIG = {
         }
     },
     'loggers': {
-        '__main__': {
+        'dict_config.app': {
             'level': 'DEBUG',
             'handlers': ['console']
         },
