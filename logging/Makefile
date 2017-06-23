@@ -1,3 +1,3 @@
-.PHONY: dict_config
-dict_config:
-	@python3 -m dict_config.app
+.PHONY: all
+all:
+	@python3 -m app.main

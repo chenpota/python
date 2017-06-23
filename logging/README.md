@@ -1,10 +1,14 @@
 # logging library
 
-[PEP 282](https://www.python.org/dev/peps/pep-0282/)
+## [PEP 282](https://www.python.org/dev/peps/pep-0282/)
 
-[PEP 337](https://www.python.org/dev/peps/pep-0337/)
+This PEP describes a proposed logging package for Python's standard library.
 
-[PEP 391](https://www.python.org/dev/peps/pep-0391/)
+## [PEP 337](https://www.python.org/dev/peps/pep-0337/)
+
+##[PEP 391](https://www.python.org/dev/peps/pep-0391/)
+
+[Configuring Logging for a Library](https://docs.python.org/3/howto/logging.html#configuring-logging-for-a-library)
 
 * Loggers
 * Handlers
@@ -38,4 +42,4 @@ It could add/remove Handler or Filter.
 
 1. https://docs.python.org/3.5/howto/logging.html
 
-2. https://docs.python.org/3.5/howto/logging-cookbook.html#logging-cookbook
+2. https://docs.python.org/3.5/howto/logging-cookbook.html

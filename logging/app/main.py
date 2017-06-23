@@ -3,11 +3,11 @@
 import logging
 import logging.config
 
-from dict_config import logger
-from dict_config.module import library
+from app import library
+from app import logger
 
 
-LOGGER = logging.getLogger('dict_config.app')
+LOGGER = logging.getLogger(__name__)
 
 
 def main():

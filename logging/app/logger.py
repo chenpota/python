@@ -19,16 +19,20 @@ CONFIG = {
             'level': 'DEBUG',
             'class': 'logging.handlers.SysLogHandler',
             'formatter': 'syslog',
-            'address': ('localhost', 514)
-            #'address': '/dev/log'
+            #'address': ('localhost', 514)
+            'address': '/dev/log'
         }
     },
     'loggers': {
-        'dict_config.app': {
+        #'external_module': {
+        #    'level': 'DEBUG',
+        #    'handlers': ['stderr', 'syslog']
+        #},
+        '__main__': {
             'level': 'DEBUG',
             'handlers': ['stderr', 'syslog']
         },
-        'dict_config.module.library': {
+        'app.library': {
             'level': 'DEBUG',
             'handlers': ['stderr', 'syslog']
         }
