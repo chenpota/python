@@ -1,14 +1,14 @@
 # logging library
 
+[Configuring Logging for a Library](https://docs.python.org/3/howto/logging.html#configuring-logging-for-a-library)
+
 ## [PEP 282](https://www.python.org/dev/peps/pep-0282/)
 
 This PEP describes a proposed logging package for Python's standard library.
 
 ## [PEP 337](https://www.python.org/dev/peps/pep-0337/)
 
-##[PEP 391](https://www.python.org/dev/peps/pep-0391/)
-
-[Configuring Logging for a Library](https://docs.python.org/3/howto/logging.html#configuring-logging-for-a-library)
+## [PEP 391](https://www.python.org/dev/peps/pep-0391/)
 
 * Loggers
 * Handlers
