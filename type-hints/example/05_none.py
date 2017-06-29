@@ -1,4 +1,5 @@
 from typing import NamedTuple, Optional, Union
+#######################################
 
 
 Person = NamedTuple(
@@ -13,7 +14,9 @@ def pass_person(v: Person):
     pass
 
 pass_person(Person('Alex', 30))
-pass_person(Person('Alex', None))  # type error if mypy --strict-optional
+pass_person(Person('Alex', None))  # error if mypy --strict-optional
+#######################################
+
 
 PersonV2 = NamedTuple(
     'PersonV2',
@@ -28,6 +31,8 @@ def pass_person_v2(v: PersonV2):
 
 pass_person_v2(PersonV2('Alex', 30))
 pass_person_v2(PersonV2('Alex', None))
+#######################################
+
 
 PersonV3 = NamedTuple(
     'PersonV3',

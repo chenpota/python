@@ -1,4 +1,5 @@
 from typing import Any, List, TypeVar, Union
+#######################################
 
 
 def pass_bulitin_list_v1(v: list) -> None:
@@ -13,6 +14,7 @@ def pass_bulitin_list_v2(v: List[Any]) -> None:
 
 pass_bulitin_list_v2([])
 pass_bulitin_list_v2([1, 's'])
+#######################################
 
 
 def pass_list_with_int(v: List[int]) -> None:
@@ -20,7 +22,8 @@ def pass_list_with_int(v: List[int]) -> None:
 
 pass_list_with_int([])
 pass_list_with_int([1, 2])
-pass_list_with_int([1, 'text'])  # type error
+pass_list_with_int([1, 'text'])  # error
+#######################################
 
 
 def pass_list_with_str_int(v: List[Union[str, int]]) -> None:
@@ -29,4 +32,4 @@ def pass_list_with_str_int(v: List[Union[str, int]]) -> None:
 pass_list_with_str_int([])
 pass_list_with_str_int([1, 2])
 pass_list_with_str_int([1, 'text'])
-pass_list_with_str_int([1, 'text', 3.4])  # type error
+pass_list_with_str_int([1, 'text', 3.4])  # error

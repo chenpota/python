@@ -1,4 +1,5 @@
 from typing import Optional
+#######################################
 
 
 class BinaryTree(object):
@@ -16,4 +17,4 @@ class BinaryTree(object):
 left = BinaryTree(None, None)
 right = BinaryTree(None, None)
 root1 = BinaryTree(left, right)
-root2 = BinaryTree(left, 3)  # type error
+root2 = BinaryTree(left, 3)  # error

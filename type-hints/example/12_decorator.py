@@ -1,6 +1,7 @@
 import functools
 from typing import TypeVar, cast
 import decorator
+#######################################
 
 
 T = TypeVar('T')
@@ -19,4 +20,4 @@ def func(v: int) -> None:
     pass
 
 func(3)
-func('3')  # type error
+func('3')  # error
