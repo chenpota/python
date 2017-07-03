@@ -1,2 +1,2 @@
 mypy
-mylint
+pylint
